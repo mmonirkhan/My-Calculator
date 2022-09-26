@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Calculator</h1>
+    <div class="card">
+        <div class="calc-head">
+            <input type="text" id="result" maxlength="15">
+        </div>
+        <div class="calc-body">
+            <div>
+                <input type="button" class="bttn" value="c" onclick="DeleteMe()">
+                <input type="button" class="bttn" value="("  onclick="Calculetor('(')">
+                <input type="button" class="bttn" value=")"  onclick="Calculetor(')')">
+                <input type="button" class="bttn-1" value="%"  onclick="Calculetor('%')">
+            </div>
+            <div>
+                <input type="button" class="bttn" value="7"  onclick="Calculetor('7')">
+                <input type="button" class="bttn" value="8"  onclick="Calculetor('8')">
+                <input type="button" class="bttn" value="9"  onclick="Calculetor('9')">
+                <input type="button" class="bttn-1" value="*"  onclick="Calculetor('*')">
+            </div>
+            <div>
+                <input type="button" class="bttn" value="4"  onclick="Calculetor('4')">
+                <input type="button" class="bttn" value="5"  onclick="Calculetor('5')">
+                <input type="button" class="bttn" value="6"  onclick="Calculetor('6')">
+                <input type="button" class="bttn-1" value="-"  onclick="Calculetor('-')">
+            </div>
+            <div>
+                <input type="button" class="bttn" value="1"  onclick="Calculetor('1')">
+                <input type="button" class="bttn" value="2"  onclick="Calculetor('2')">
+                <input type="button" class="bttn" value="3"  onclick="Calculetor('3')">
+                <input type="button" class="bttn-1" value="+"  onclick="Calculetor('+')">
+            </div>
+            <div>
+                <input type="button" class="bttn" value="0"  onclick="Calculetor('0')">
+                <input type="button" class="bttn" value="."  onclick="Calculetor('.')">
+                <input type="button" class="bttn" value="/"  onclick="Calculetor('/')">
+                <input type="button" class="bttn-1"  style="background-color: coral;" value="="  onclick="Answer()">
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+<script>
+    function DeleteMe(){
+        document.getElementById("result").value = ""
+
+}
+function Calculetor(NewValue){
+  document.getElementById("result").value += NewValue;
+  
+}
+function Answer(){
+  var a = document.getElementById("result").value;
+  var b = eval(a);
+  document.getElementById("result").value = b;
+
+  
+}
+
+</script>
+</html>
